@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+    defaultConfig {
+        applicationId "es.bancosantander.rssreader"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+ext {
+    support = '26.1.0'
+    constraint = '1.0.2'
+    arch = '1.0.0-beta2'
+    retrofit = '2.1.0'
+    converter_xml = '2.0.0'
+    okhttp = '3.6.0'
+    butterknife = '8.6.0'
+    dagger = '2.5'
+    timber = '4.5.1'
+
+    junit = '4.12'
+    espresso = '2.2.2'
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+
+    compile "com.android.support:appcompat-v7:$support"
+    compile "com.android.support:recyclerview-v7:$support"
+    compile "com.android.support:design:$support"
+    compile "com.android.support:support-annotations:$support"
+    compile "com.android.support:customtabs:$support"
+    compile "com.android.support.constraint:constraint-layout:$constraint"
+
+    compile "android.arch.persistence.room:runtime:$arch"
+    compile "android.arch.lifecycle:runtime:$arch"
+    compile "android.arch.lifecycle:extensions:$arch"
+    kapt "android.arch.persistence.room:compiler:$arch"
+    kapt "android.arch.lifecycle:compiler:$arch"
+
+    kapt "com.jakewharton:butterknife-compiler:$butterknife"
+    compile "com.jakewharton:butterknife:$butterknife"
+
+    kapt "com.google.dagger:dagger-compiler:$dagger"
+    compile "com.google.dagger:dagger:$dagger"
+
+    compile "com.jakewharton.timber:timber:$timber"
+
+
+    compile "com.squareup.okhttp3:okhttp:$okhttp"
+    compile "com.squareup.okhttp3:logging-interceptor:$okhttp"
+    compile "com.squareup.retrofit2:retrofit:$retrofit"
+    compile("com.squareup.retrofit2:converter-simplexml:$converter_xml") {
+        exclude group: 'xpp3', module: 'xpp3'
+        exclude group: 'stax', module: 'stax-api'
+        exclude group: 'stax', module: 'stax'
+    }
+
+    androidTestCompile("com.android.support.test.espresso:espresso-core:$espresso", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    testCompile "junit:junit:$junit"
+}
+

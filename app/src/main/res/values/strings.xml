@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">RSSReader</string>
+    <string name="refresh">Refrescar</string>
+    <string name="connection_error">Error de conexión</string>
+    <string name="add">AÑADIR</string>
+    <string name="cancel">CANCELAR</string>
+    <string name="add_channel">Add RSS feed</string>
+    <string name="add_channel_text">Enter the RSS feed URL</string>
+    <string name="net_error">Error de red</string>
+    <string name="url_error">URL invalida</string>
+    <string name="feed_error">No es un contenido RSS</string>
+    <string name="unknown_error">Error desconocido</string>
+
+</resources>

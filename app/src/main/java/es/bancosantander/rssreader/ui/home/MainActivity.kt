@@ -4,6 +4,12 @@ import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import es.bancosantander.rssreader.R
 import es.bancosantander.rssreader.base.BaseActivity
+import android.R.menu
+import android.view.Menu
+import android.content.Intent
+import android.view.MenuItem
+import es.bancosantander.rssreader.ui.settings.SettingsActivity
+
 
 class MainActivity : BaseActivity() {
     @javax.inject.Inject
@@ -28,5 +34,23 @@ class MainActivity : BaseActivity() {
         super.onDestroy()
         presenter.dispose()
         decorator.dispose()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val intent: Intent
+
+        when (item.getItemId()) {
+            R.id.feetSettings -> {
+                intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+        return true
     }
 }

@@ -49,6 +49,9 @@ class MainActivity : BaseActivity() {
                 intent = Intent(this, SettingsActivity::class.java)
                 startActivity(intent)
             }
+            R.id.seachMenu ->{
+                decorator.showSearchView(!decorator.searchViewShowed())
+            }
         }
 
         return true

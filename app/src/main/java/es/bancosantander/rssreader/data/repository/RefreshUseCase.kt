@@ -35,7 +35,7 @@ constructor(
         executor.execute {
             try {
                 val sharedPref = PreferenceManager.getDefaultSharedPreferences(appContext)
-                val syncConnPref = sharedPref.getString("pref_sync", "")
+                val syncConnPref = sharedPref.getString("pref_sync", "http://www.xatakandroid.com/tag/feeds/rss2.xml")
 
                 val feedService = Retrofit.Builder()
                         .client(client)

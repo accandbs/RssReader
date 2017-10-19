@@ -11,7 +11,7 @@
     <string name="feed_error">No es un contenido RSS</string>
     <string name="unknown_error">Error desconocido</string>
     <string name="pref_title">RSS Feed</string>
-    <string name="pref_summary">Sitio RSS </string>
+    <string name="pref_summary">Solo se admiten feed de XML RSS </string>
     <string name="pref_feed">http://www.xatakandroid.com/tag/feeds/rss2.xml</string>
 
 </resources>

@@ -9,7 +9,7 @@ import java.util.*
 data class Item(
         @PrimaryKey
         var link: String,
-        var pubDate: Date,
+        var pubDate: Date?,
         var title: String,
         var description: String,
         var read: Int

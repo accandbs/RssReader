@@ -25,4 +25,7 @@ abstract class ItemsDao {
 
     @Query("SELECT * FROM items ORDER BY pubDate DESC")
     abstract fun getAll(): LiveData<List<RSSItemUiModel>>
+
+    @Query("SELECT * FROM items where title LIKE :search")
+    abstract fun getItemsWitnTitle(search: String): LiveData<List<RSSItemUiModel>>
 }

@@ -18,6 +18,10 @@ constructor(
         override fun onRefresh() = viewModel.refreshItems()
 
         override fun onClick(channel: RSSItemUiModel) = navigator.navigateToDetail(channel)
+
+        override fun showSearchView(show: Boolean) {
+            decorator?.showSearchView(show)
+        }
     }
 
     fun initialize(decorator: MainActivityUserInterface, viewModel: MainViewModel) {

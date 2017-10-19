@@ -3,6 +3,7 @@ package es.bancosantander.rssreader.data.repository
 import android.arch.lifecycle.LiveData
 import es.bancosantander.rssreader.data.domain.db.ItemsDao
 import es.bancosantander.rssreader.data.repository.entities.Item
+import es.bancosantander.rssreader.data.repository.entities.RSSItemUiModel
 import es.bancosantander.rssreader.data.repository.entities.RSSItemUiModel.Companion.READ
 
 class FeedRepository
@@ -15,6 +16,8 @@ constructor(
 
 
     fun getItems() = itemsDao.getAll()
+
+    fun getItemsWIthTitle(title: String)= itemsDao.getItemsWitnTitle("%${title}%")
 
     fun getItem(url:String) = itemsDao.getItem(url)
 
